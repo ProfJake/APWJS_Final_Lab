@@ -25,39 +25,6 @@ var userRouter = require('./routes/userRoutes.js')
 
 let mongoose = require('mongoose');
 mongoose.set('bufferCommands', false);
-//const actSchema=require('./models/activitySchema');
-// const exSchema = new mongoose.Schema({
-// 	type: {
-// 		type: String,
-// 		required: true
-// }
-// });
-// exSchema.loadClass(Exercise);
-// const actSchema= new mongoose.Schema(
-// {
-// 	activity : {
-// 		type: exSchema
-// 	} ,
-// 	weight: Number,
-// 	distance: Number,
-// 	time: {
-// 		type: Number, 
-// 		validate: {
-// 			validator: function(){
-// 				return (this.time>0)
-// 			}, 
-// 			message: "Time must be greater than 0!"
-// 		},
-// 		required: [true,'You must enter a time for speed']
-// 	},
-// 	user: String
-	
-// });
-
-// actSchema.loadClass(tracker);
-// actSchema.path('activity').required(true, 'You must enter an activity to track');
-// actSchema.path('weight').required(true, 'You must enter a weight for calculation');
-// actSchema.path('distance').required(true, 'You must enter a distance for everything');
 
 const actCol=require('./models/activitySchema');
 
@@ -84,7 +51,6 @@ function moveOn(postData){
 
     return proceed;
 }
-
 //The order of provided routing functions matters.  They work similarly to
 //cases in a switch statement.  The first matching route is run.
 //the response methods 'send' and 'end' will end the "request response cycle"
